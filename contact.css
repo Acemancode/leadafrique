@@ -1,0 +1,482 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 80px;
+  background-color: #ffffff;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.logo img {
+  height: 50px;
+  content: url('https://www.leadafrique.org/_next/image?url=%2Flogo.webp&w=256&q=75');
+  width: auto;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav ul li {
+  margin: 0 20px;
+  position: relative;
+}
+
+.main-nav ul li a {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #7f07a4;
+  transition: width 0.3s ease-in-out;
+}
+
+.main-nav ul li a:hover {
+  color: blueviolet;
+}
+
+.main-nav ul li a:hover::after {
+  width: 100%;
+}
+
+.others .other-main {
+  display: none;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9704a4;
+  color: white;
+  min-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.others:hover .other-main {
+  display: block;
+  top: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.other-main ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.other-main ul li {
+  margin: 0;
+  width: 100%;
+}
+
+.other-main ul li a {
+  padding: 12px 20px;
+  display: block;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.other-main ul li a:hover {
+  background-color: #212128;
+}
+
+.other-main ul li a i {
+  margin-left: 8px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger-menu .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
+  color: white;
+  background-color: #c500ed;
+  z-index: 1001;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  padding-top: 100px;
+}
+
+.side-menu nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu nav li {
+  width: 100%;
+}
+
+.side-menu nav a {
+  display: block;
+  padding: 18px 30px;
+  font-size: 1.6em;
+  font-weight: lighter;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.side-menu nav a:hover {
+  color: #ffffff;
+}
+
+#menu-toggle:checked ~ .side-menu {
+  transform: translateX(0);
+}
+
+#menu-toggle:checked ~ .hamburger-menu .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+#menu-toggle:checked ~ .hamburger-menu .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburger-menu .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+.page-header {
+  background: url(img/annie-spratt-goholCAVTRs-unsplash.jpg) center center/cover no-repeat;
+  height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-header .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-header h1 {
+  color: #fff;
+  text-align: center;
+  padding: 0px 20px;
+  font-size: 6em;
+  font-weight: bold;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.info-box {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+}
+
+.info-box img {
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.info-box h3 {
+  color: #2c2c91;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  color: #444;
+  font-size: 15px;
+}
+
+.contact-form {
+  background-color: #8800ffab;
+  padding: 60px 20px;
+}
+
+.form-container {
+  max-width: 550px;
+  margin: auto;
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: rgb(74, 74, 247);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1313cc;
+}
+
+.contact-section-end {
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  height: 60vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-end-container h3 span {
+  color: #a020f0;
+  font-weight: bold;
+}
+
+.contact-end-container p {
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.contact-end-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-end-container a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+  filter: brightness(0) saturate(100%) sepia(100%) hue-rotate(260deg) brightness(1.2);
+}
+
+.map-section {
+  width: 100%;
+  margin-bottom: -20px;
+  margin-top: -20px;
+}
+
+footer {
+  height: auto;
+  padding: 5vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2px solid white;
+  padding: 0 0 40px 0;
+  width: 86%;
+}
+
+.logo1 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.logo1 img {
+  height: 80px;
+}
+
+.logo1 h4 {
+  color: white;
+  font-size: 6.5em;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+.contact-bthn {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0 80px 0;
+}
+
+.btn33 {
+  height: 80px;
+  width: 260px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.btn34 {
+  height: 80px;
+  width: 230px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.credentials {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.credentials p {
+  color: white;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.links2 ul {
+  display: flex;
+  gap: 20px;
+}
+
+.links2 .wow {
+  border-right: 1px solid blueviolet;
+  padding-right: 20px;
+}
+
+.wow a {
+  color: blueviolet;
+}
+
+.links2 ul li a {
+  color: white;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.links2 ul li a:hover {
+  color: blueviolet;
+}
+
+@media (max-width: 992px) {
+  .page-header {
+    height: 400px;
+  }
+
+  .page-header h1 {
+    font-size: 2.3em;
+  }
+}

@@ -1,0 +1,496 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(137, 43, 226, 0.284);
+}
+
+a {
+  color: inherit;
+}
+
+.main-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 80px;
+  background-color: #ffffff;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.logo img {
+  height: 50px;
+  content: url('https://www.leadafrique.org/_next/image?url=%2Flogo.webp&w=256&q=75');
+  width: auto;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav ul li {
+  margin: 0 20px;
+  position: relative;
+}
+
+.main-nav ul li a {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #7f07a4;
+  transition: width 0.3s ease-in-out;
+}
+
+.main-nav ul li a:hover {
+  color: blueviolet;
+}
+
+.main-nav ul li a:hover::after {
+  width: 100%;
+}
+
+.others .other-main {
+  display: none;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9704a4;
+  color: white;
+  min-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.others:hover .other-main {
+  display: block;
+  top: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.other-main ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.other-main ul li {
+  margin: 0;
+  width: 100%;
+}
+
+.other-main ul li a {
+  padding: 12px 20px;
+  display: block;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.other-main ul li a:hover {
+  background-color: #212128;
+}
+
+.other-main ul li a i {
+  margin-left: 8px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger-menu .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
+  color: white;
+  background-color: #c500ed;
+  z-index: 1001;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  padding-top: 100px;
+}
+
+.side-menu nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu nav li {
+  width: 100%;
+}
+
+.side-menu nav a {
+  display: block;
+  padding: 18px 30px;
+  font-size: 1.6em;
+  font-weight: lighter;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.side-menu nav a:hover {
+  color: #ffffff;
+}
+
+#menu-toggle:checked ~ .side-menu {
+  transform: translateX(0);
+}
+
+#menu-toggle:checked ~ .hamburger-menu .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+#menu-toggle:checked ~ .hamburger-menu .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburger-menu .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.gallery-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.653), rgba(0, 0, 0, 0.336)), url(img/klaudia-piaskowska-g55bG1O5Lf0-unsplash.jpg) center center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.gallery-hero h1 {
+  font-size: 13rem;
+  display: flex;
+  gap: 5rem;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.solid {
+  color: #a259ff;
+  font-weight: bold;
+}
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  font-weight: bold;
+}
+
+#portfolio {
+  padding: 4rem 0;
+}
+
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #eee;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: #a259ff;
+  color: white;
+}
+
+.portfoliogrid {
+  columns: 3 250px;
+  column-gap: 1.5rem;
+}
+
+.griditem {
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+}
+
+.griditem img {
+  border-radius: 8px;
+  width: 100%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.griditem img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+  cursor: pointer;
+}
+
+.footer {
+  padding: 5vh 0 10vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+}
+
+.footer1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2px solid white;
+  padding-bottom: 40px;
+  width: 86%;
+}
+
+.logo1 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.logo1 img {
+  height: 80px;
+}
+
+.logo1 h4 {
+  font-size: 6.5em;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+.contact-bthn {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0 80px 0;
+}
+
+.btn33,
+.btn34 {
+  height: 80px;
+  width: 100%;
+  max-width: 260px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn33:hover,
+.btn34:hover {
+  background-color: white;
+  color: black;
+}
+
+.credentials {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.credentials p {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.links2 ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.links2 .wow {
+  border-right: 1px solid blueviolet;
+  padding-right: 20px;
+}
+
+.wow a {
+  color: blueviolet;
+}
+
+.links2 ul li a {
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.links2 ul li a:hover {
+  color: blueviolet;
+}
+
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .gallery-hero {
+    height: 60vh;
+  }
+
+  .gallery-hero h1 {
+    font-size: 8rem;
+    gap: 3rem;
+    flex-direction: column;
+  }
+
+  .portfoliogrid {
+    columns: 2 200px;
+  }
+
+  .logo1 h4 {
+    font-size: 4em;
+  }
+
+  .contact-bthn {
+    flex-direction: column;
+    width: 90%;
+    padding: 40px 0;
+  }
+
+  .btn33,
+  .btn34 {
+    font-size: 1em;
+    height: 70px;
+    max-width: 100%;
+  }
+
+  .credentials {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .links2 ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-hero h1 {
+    font-size: 4rem;
+    gap: 2rem;
+  }
+
+  .portfoliogrid {
+    columns: 1;
+  }
+
+  .filter-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo1 h4 {
+    font-size: 3em;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .footer1 {
+    width: 90%;
+    padding-bottom: 20px;
+  }
+
+  .contact-bthn {
+    width: 90%;
+  }
+
+  .credentials {
+    padding: 0 1rem;
+  }
+
+  .links2 .wow {
+    border-right: none;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .links2 ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
